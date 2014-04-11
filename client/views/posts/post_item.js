@@ -33,6 +33,9 @@ Template.postItem.helpers({
       Positions.upsert({postId: post._id}, {$set: {position: newPosition}})
     });
     return attributes;
+  },
+  postUrl: function(){
+    return this.shortUrl ? this.shortUrl : this.url;
   }
 });
 Template.postItem.events({
